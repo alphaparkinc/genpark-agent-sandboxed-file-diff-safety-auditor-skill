@@ -1,0 +1,37 @@
+{
+  "name": "genpark-agent-sandboxed-file-diff-safety-auditor-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Pre-commit diff safety scanner preventing destructive shell commands, API token leaks, and malicious workspace disk modifications.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "alphaparkinc",
+  "category": "agentic-safety",
+  "tags": [
+    "diff-auditor",
+    "agent-safety",
+    "code-sandbox",
+    "secret-detection",
+    "destructive-command-guard"
+  ],
+  "inputs": {
+    "target_file": {
+      "type": "string",
+      "default": "src/database/migration.py"
+    }
+  },
+  "outputs": {
+    "audit_id": {
+      "type": "string"
+    },
+    "safety_score": {
+      "type": "integer"
+    },
+    "is_safe_to_apply": {
+      "type": "boolean"
+    },
+    "verdict": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
